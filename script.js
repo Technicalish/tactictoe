@@ -2,6 +2,9 @@ var rps = document.querySelector("#rps");
 var blanks = document.querySelectorAll("#rps > div");
 rps.style.top = (document.body.clientHeight - rps.clientHeight) / 2 + "px";
 rps.style.left = (document.body.clientWidth - rps.clientWidth) / 2 + "px";
+document.body.addEventListener("dblclick", function() {
+location.reload();
+});
 var xOo = "x";
 function addImage(box, xOo) {
 var img = new Image();

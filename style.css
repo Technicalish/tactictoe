@@ -10,7 +10,6 @@ html, body {
 }
 #rps {
   margin: auto;
-  padding: 3.5%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -18,7 +17,6 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 3.5%;
   background: #ddd;
 }
 #rps > div {

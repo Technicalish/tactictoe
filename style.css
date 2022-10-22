@@ -6,12 +6,16 @@
 html, body {
   height: 100%;
   width: 100%;
-  //position: relative;
+  position: relative;
 }
 #rps {
   margin: auto;
   padding: 0.5rem;
-  //position: absolute;
+  position: absolute;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);

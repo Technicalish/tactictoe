@@ -32,7 +32,7 @@ html, body {
   text-align: center;
 }
 #rps > div.x::after {
-  content: "❌";
+  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMgMjAuMTY4bC04LjE4NS04LjE4NyA4LjE4NS04LjE3NC0yLjgzMi0yLjgwNy04LjE4MiA4LjE3OS04LjE3Ni04LjE3OS0yLjgxIDIuODEgOC4xODYgOC4xOTYtOC4xODYgOC4xODQgMi44MSAyLjgxIDguMjAzLTguMTkyIDguMTggOC4xOTJ6Ii8+PC9zdmc+");
   color: transparent;
   text-shadow: 0 0 0 #ddd;
 }

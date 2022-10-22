@@ -32,12 +32,12 @@ html, body {
   text-align: center;
 }
 #rps > div.x::after {
-  content: url("/x.svg");
+  content: url("./x.svg");
   color: transparent;
   text-shadow: 0 0 0 #ddd;
 }
 #rps > div.o::after {
-  content: url("/o.svg");
+  content: url("./o.svg");
   color: transparent;
   text-shadow: 0 0 0 #ddd;
 }

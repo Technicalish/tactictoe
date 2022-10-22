@@ -1,7 +1,6 @@
 var rps = document.querySelector("#rps");
 var blanks = document.querySelectorAll("#rps > div");
-rps.style.top = (document.body.clientHeight - rps.clientHeight) / 2 + "px";
-rps.style.left = (document.body.clientWidth - rps.clientWidth) / 2 + "px";
+rps.style.height = rps.style.width = (Math.min(document.body.clientHeight, document.body.clientWidth) - 16) + "px";
 var xOo = "x";
 function addImage(box, xOo) {
 var img = new Image();

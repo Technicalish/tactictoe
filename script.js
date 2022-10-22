@@ -3,6 +3,9 @@ var blanks = document.querySelectorAll("#rps > div");
 rps.style.top = (document.body.clientHeight - rps.clientHeight) / 2 + "px";
 rps.style.left = (document.body.clientWidth - rps.clientWidth) / 2 + "px";
 var xOo = "x";
+function addImage() {
+
+}
 function ticTacToe() {
 var x = document.querySelectorAll(".x");
   if (x.length === 1) {
@@ -300,6 +303,7 @@ var x = document.querySelectorAll(".x");
           while (box.classList[1]) {
           box = document.querySelector(random());
           }
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -313,6 +317,7 @@ var x = document.querySelectorAll(".x");
       while (box.classList[1]) {
       box = document.querySelector(random());
       }
+    addImage(box, xOo);
     box.classList.add(xOo);
     xOo = "x";
     }
@@ -357,6 +362,7 @@ var winningCombinations = [
 }
 function boxClicked() {
   if (!this.classList[1] && xOo === "x") {
+  addImage(this, xOo);
   this.classList.add(xOo);
   xOo = "o";
   ticTacToe();

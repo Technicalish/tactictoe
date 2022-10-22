@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#rps {
+  margin: 0 auto;
+  padding: 0.5rem;
+  position: absolute;
+  display: grid;
+  height: calc(100vw - 2rem);
+  width: calc(100vw - 2rem);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0.5rem;
+  background: #ddd;
+}
+#rps > div {
+  position: relative;
+  background: #000;
+}
+#rps > div.x::after, #rps > div.o::after {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+#rps > div.x::after {
+  content: "❌";
+  color: transparent;
+  text-shadow: 0 0 0 #ddd;
+}
+#rps > div.o::after {
+  content: "⭕";
+  color: transparent;
+  text-shadow: 0 0 0 #ddd;
+}

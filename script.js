@@ -1,7 +1,9 @@
 var rps = document.querySelector("#rps");
 var blanks = document.querySelectorAll("#rps > div");
 function resized() {
-rps.style.height = rps.style.width = (Math.min(document.body.clientHeight, document.body.clientWidth) * 0.8) + "px";
+var size = (Math.min(document.body.clientHeight, document.body.clientWidth) * 0.8);
+rps.style.height = rps.style.width = size + "px";
+rps.style.padding = rps.style.gap = (size * 0.035) + "px";
 }
 resized();
 window.addEventListener("resize", resized);

@@ -24,7 +24,13 @@ html, body {
   position: relative;
   background: #000;
 }
-#rps > div img {
+#rps > div.x img {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#rps > div.o img {
   margin: 10%;
   display: block;
   position: absolute;

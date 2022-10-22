@@ -3,8 +3,15 @@ var blanks = document.querySelectorAll("#rps > div");
 rps.style.top = (document.body.clientHeight - rps.clientHeight) / 2 + "px";
 rps.style.left = (document.body.clientWidth - rps.clientWidth) / 2 + "px";
 var xOo = "x";
-function addImage() {
-
+function addImage(box, xOo) {
+var img = new Image();
+  if (xOo === "x") {
+  img.src = "/x.svg";
+  box.append(img);
+  } else if (xOo === "o") {
+  img.src = "/o.svg";
+  box.append(img);
+  }
 }
 function ticTacToe() {
 var x = document.querySelectorAll(".x");

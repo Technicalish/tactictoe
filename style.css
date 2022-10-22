@@ -32,12 +32,12 @@ html, body {
   text-align: center;
 }
 #rps > div.x::after {
-  content: url("./x.svg");
+  content: "❌";
   color: transparent;
   text-shadow: 0 0 0 #ddd;
 }
 #rps > div.o::after {
-  content: url("./o.svg");
+  content: "data:image+xml;utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202c5.514%200%2010%204.486%2010%2010s-4.486%2010-10%2010-10-4.486-10-10%204.486-10%2010-10zm0-2c-6.627%200-12%205.373-12%2012s5.373%2012%2012%2012%2012-5.373%2012-12-5.373-12-12-12z%22%2F%3E%3C%2Fsvg%3E";
   color: transparent;
   text-shadow: 0 0 0 #ddd;
 }

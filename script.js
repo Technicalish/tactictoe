@@ -8,6 +8,7 @@ var x = document.querySelectorAll(".x");
   if (x.length === 1) {
   var five = document.querySelector(".five");
     if (x[0] !== five) {
+    addImage(five, xOo);
     five.classList.add(xOo);
     } else {
     var corners = [".one", ".three", ".seven", ".nine"];
@@ -15,6 +16,7 @@ var x = document.querySelectorAll(".x");
     return document.querySelector(corners[Math.floor(Math.random() * corners.length)]);
     }
     var selectedCorner = randomCorner();
+    addImage(selectedCorner, xOo);
     selectedCorner.classList.add(xOo);
     }
   } else if (x.length < 5) {
@@ -60,6 +62,7 @@ var x = document.querySelectorAll(".x");
         occupiedPatternsString.forEach(string => {
         var box = document.querySelector(string);
           if (!box.classList[1] && xOo === "o") {
+          addImage(box, xOo);
           box.classList.add(xOo);
           xOo = "x";
           }
@@ -83,6 +86,7 @@ var x = document.querySelectorAll(".x");
       occupiedFillUpsString.forEach((string) => {
       var box = document.querySelector(string);
         if (!box.classList[1] && xOo === "o") {
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -114,6 +118,7 @@ var x = document.querySelectorAll(".x");
       occupiedArrowsString.forEach((string) => {
       var box = document.querySelector(string);
         if (!box.classList[1] && xOo === "o") {
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -139,6 +144,7 @@ var x = document.querySelectorAll(".x");
       occupiedPatternsString.forEach(string => {
       var box = document.querySelector(string);
         if (!box.classList[1] && xOo === "o") {
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -161,6 +167,7 @@ var x = document.querySelectorAll(".x");
       occupiedFillUpsString.forEach((string) => {
       var box = document.querySelector(string);
         if (!box.classList[1] && xOo === "o") {
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -186,6 +193,7 @@ var x = document.querySelectorAll(".x");
       occupiedAdjacentSidesString.forEach((string) => {
       var box = document.querySelector(string);
         if (!box.classList[1] && xOo === "o") {
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -209,6 +217,7 @@ var x = document.querySelectorAll(".x");
           while (box.classList[1]) {
           box = document.querySelector(random());
           }
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -233,6 +242,7 @@ var x = document.querySelectorAll(".x");
       occupiedArrowsString.forEach((string) => {
       var box = document.querySelector(string);
         if (!box.classList[1] && xOo === "o") {
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }
@@ -256,6 +266,7 @@ var x = document.querySelectorAll(".x");
           while (box.classList[1]) {
           box = document.querySelector(random());
           }
+        addImage(box, xOo);
         box.classList.add(xOo);
         xOo = "x";
         }

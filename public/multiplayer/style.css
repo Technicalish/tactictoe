@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#rps {
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background: #ddd;
+}
+#rps > div {
+  position: relative;
+  background: #000;
+}
+#rps > div.x img {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#rps > div.o img {
+  margin: 10%;
+  display: block;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+}

@@ -47,6 +47,9 @@ var matchFound;
   }
 })
 
-app.use(express.static("./public"));
+app.use(express.static(__dirname + "/public"));
+app.get("*", (req, res) => {
+res.status(404).send(req.path);
+});
 app.listen(process.env.PORT || 3000);
 module.exports = app;

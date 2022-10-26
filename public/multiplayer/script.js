@@ -1,10 +1,7 @@
+var xOo = "x";
+var toss = "o";
+var firstMove = true;
 eruda.init();
-var socket = io("/");
-socket.emit("iwannaplay", "");
-socket.on("wishgranted", (roomId, toss) => {
-socket.emit("joinroom", roomId);
-alert(toss);
-})
 var rps = document.querySelector("#rps");
 var blanks = document.querySelectorAll("#rps > div");
 function resized() {
@@ -14,14 +11,19 @@ rps.style.padding = rps.style.gap = (size * 0.035) + "px";
 }
 resized();
 window.addEventListener("resize", resized);
+function changexOo() {
+  if (xOo === "x") {
+  xOo = "o";
+  } else if (xOo === "o") {
+  xOo = "x";
+  }
+}
 function addImage(box, xOo) {
 var img = new Image();
 img.src = `/${xOo}.svg`;
 box.append(img);
 }
-function ticTacToe(current, boxes) {
-socket.send([current, boxes]);
-xOo = "x";
+function ticTacToe() {
 var x = document.querySelectorAll(".x");
 var winner;
 var winningCombinations = [
@@ -41,7 +43,7 @@ var winningCombinations = [
     if (first.classList.contains("x") && second.classList.contains("x") && third.classList.contains("x")) {
     winner = "x";
     blanks.forEach(box => {
-      box.removeEventListener("click", boxClicked);
+    box.removeEventListener("click", boxClicked);
     });
     alert("X won😍 and O lost😭");
     //location.reload();
@@ -60,13 +62,50 @@ var winningCombinations = [
   //location.reload();
   }
 }
-function boxClicked() {
-  if (!this.classList[1] && xOo === "x") {
-  addImage(this, xOo);
-  this.classList.add(xOo);
-  xOo = "o";
-  ticTacToe(this.classList, [...rps.children].map(box => box.classList[1] || ""));
+var socket = io("/");
+socket.on("userjoined", (id, random) => {
+var phrase = "lost";
+  if (random === "x") {
+  phrase = "won";
   }
+  if (id === socket.id && random === "x") {
+  toss = "x";
+  }
+  if (id !== socket.id && random === "o") {
+  toss = "x";
+  }
+console.log(xOo, toss, firstMove)
+console.log(`I joined(${id}) and I ${phrase} the toss(${random}):::${socket.id}`)
+})
+socket.on("userleft", (id) => {
+  blanks.forEach(box => {
+  box.className = box.innerHTML = "";
+  });
+console.log(`I joined(${id})`);
+})
+socket.on("boxclicked", (number, Toss) => {
+console.log(number, Toss);
+firstMove = false;
+changexOo();
+var element = document.querySelector(`.${number}`);
+addImage(element, Toss);
+element.classList.add(Toss);
+ticTacToe()
+})
+function boxClicked() {
+  if (firstMove && xOo === toss) {
+  addImage(this, toss);
+  this.classList.add(toss);
+  socket.emit("boxclicked", this.classList[0], this.classList[1]);
+  changexOo();
+  }
+  if (!firstMove && !this.classList[1] && xOo === toss) {
+  addImage(this, toss);
+  this.classList.add(toss);
+  socket.emit("boxclicked", this.classList[0], this.classList[1]);
+  changexOo();
+  }
+ticTacToe();
 }
 blanks.forEach(box => {
 box.style.fontSize = box.clientWidth * 0.7 + "px";

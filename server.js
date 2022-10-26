@@ -46,5 +46,6 @@ var matchFound;
   console.log(chalk.green(`New room created: ${roomId}`));
   }
 })
+
 app.use(express.static("./public"));
-server.listen(process.env.PORT || 3000);
+module.exports = app;

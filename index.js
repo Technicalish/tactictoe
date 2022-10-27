@@ -52,4 +52,4 @@ app.get("*", (req, res) => {
 res.status(404).send(req.path);
 });
 server.listen(process.env.PORT || 3000);
-module.exports = server;
+export default server;

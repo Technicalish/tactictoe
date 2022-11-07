@@ -5,7 +5,7 @@ var { Server } = require("socket.io");
 var server = createServer(app);
 var io = new Server(server);
 var { v4: uuid } = require("uuid");
-var chalk = import("chalk");
+var chalk = (...args) => import("chalk").then(({default: chalk}) => chalk(...args));
 
 io.on("connection", async (mySocket) => {
 console.log(chalk.blue(`New user joined: ${mySocket.id}`));;

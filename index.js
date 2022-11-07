@@ -51,5 +51,5 @@ app.use(express.static(__dirname + "/public"));
 app.get("*", (req, res) => {
 res.status(404).send(req.path);
 });
-server.listen(process.env.PORT || 8000);
+server.listen(process.env.PORT || 8080);
 module.exports = server;

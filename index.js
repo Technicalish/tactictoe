@@ -1,11 +1,11 @@
-import express from "express";
+var express = require("express");
 var app = express();
-import { createServer } from "http";
-import { Server } from "socket.io";
+var { createServer } = require("http");
+var { Server } = require("socket.io");
 var server = createServer(app);
 var io = new Server(server);
-import { v4 as uuid } from "uuid";
-import chalk from "chalk";
+var { v4: uuid } = require("uuid");
+var chalk = import("chalk");
 
 io.on("connection", async (mySocket) => {
 console.log(chalk.blue(`New user joined: ${mySocket.id}`));;

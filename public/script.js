@@ -1,3 +1,4 @@
+new URLSearchParams(window.location.search).has("author") && alert("Mohd Ibrahim Irfan Shah");
 var rps = document.querySelector("#rps");
 var blanks = document.querySelectorAll("#rps > div");
 function resized() {
